@@ -1,0 +1,17 @@
+{
+  "root": "/Users/baidu/haohao/research/lark-PM",
+  "pidPath": "/Users/baidu/haohao/research/lark-PM/pids",
+  "sockPath": "/Users/baidu/haohao/research/lark-PM/sock",
+  "loglength": 100,
+  "logstream": false,
+  "columns": [
+    "uid",
+    "command",
+    "script",
+    "forever",
+    "pid",
+    "id",
+    "logfile",
+    "uptime"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+    "name": "lark-PM",
+    "version": "0.0.0-alpha",
+    "description": "lark process manager",
+    "main": ".easy",
+    "directories": {
+        "example": "examples"
+    },
+    "scripts": {
+        "test": "cd .easy && rm -rf node_modules && ln -s ../node_modules node_modules && NODE_ENV=testing ./node_modules/.bin/mocha --harmony --require should test/"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/larkjs/lark-PM.git"
+    },
+    "keywords": [
+        "process manager",
+        "lark"
+    ],
+    "dependencies": {
+        "debug": "^2.2.0",
+        "extend": "^3.0.0",
+        "forever": "^0.15.1",
+        "lodash": "^4.12.0",
+        "mkdirp": "^0.5.1"
+    },
+    "author": "lark-team",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/larkjs/lark-PM/issues"
+    },
+    "homepage": "https://github.com/larkjs/lark-PM",
+    "devDependencies": {
+        "chalk": "^1.1.1",
+        "easy-babel": "^1.0.3",
+        "mocha": "^2.3.3",
+        "should": "^7.1.1"
+    },
+    "engines": {
+        "node": ">=0.11.9"
+    },
+    "easy": {
+        "main": "index.js",
+        "scripts": {
+            "test": "NODE_ENV=testing ./node_modules/.bin/mocha --harmony --require should test/"
+        }
+    }
+}
