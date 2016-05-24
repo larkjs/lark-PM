@@ -8,6 +8,10 @@ var _http = require('http');
 
 var _http2 = _interopRequireDefault(_http);
 
+var _path = require('path');
+
+var _path2 = _interopRequireDefault(_path);
+
 var _ = require('..');
 
 var _2 = _interopRequireDefault(_);
@@ -23,11 +27,13 @@ var server = _http2.default.createServer(function (req, res) {
 });
 
 _2.default.configure({
-    'root': process.env.HOME,
+    'daemon-dirname': process.env.HOME,
+    'log-file': _path2.default.join(__dirname, 'logs/process.log'),
     'background': true,
-    'instances': 4
-});
+    // 'instances': 2,
+    'memory': 1 * 1024 * 1024 });
 
+// 1GB
 debug('examples/app.js testing PM role');
 if (_2.default.isWorker) {
     debug('examples/app.js PM role is WORKER');
@@ -35,12 +41,6 @@ if (_2.default.isWorker) {
     console.log('Server ' + process.pid + ' has started listening at 3000');
 } else if (_2.default.isMaster) {
     debug('examples/app.js PM role is MASTER');
-    _2.default.on('start', function () {
-        return console.log("Service started !");
-    });
-    _2.default.on('stop', function () {
-        return console.log("Service stopped !");
-    });
 } else if (_2.default.isDaemon) {
     debug('examples/app.js PM role is DAEMON');
 } else {

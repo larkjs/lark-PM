@@ -2,6 +2,7 @@
 
 import _debug   from 'debug';
 import http     from 'http';
+import path     from 'path';
 import PM       from '..';
 
 const debug = _debug('lark-PM');
@@ -13,9 +14,11 @@ const server = http.createServer((req, res) => {
 });
 
 PM.configure({
-    'root': process.env.HOME,
+    'daemon-dirname': process.env.HOME,
+    'log-file':path.join(__dirname, 'logs/process.log'),
     'background': true,
-    'instances': 4,
+    // 'instances': 2,
+    'memory': 1 * 1024 * 1024, // 1GB
 });
 
 debug('examples/app.js testing PM role');
@@ -26,8 +29,6 @@ if (PM.isWorker) {
 }
 else if (PM.isMaster) {
     debug('examples/app.js PM role is MASTER');
-    PM.on('start', () => console.log("Service started !"));
-    PM.on('stop', () => console.log("Service stopped !"));
 }
 else if (PM.isDaemon) {
     debug('examples/app.js PM role is DAEMON');
