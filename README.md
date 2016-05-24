@@ -1,5 +1,4 @@
 # lark-pm
-==============
 
 [![NPM version][npm-image]][npm-url]
 [![NPM downloads][downloads-image]][npm-url]
