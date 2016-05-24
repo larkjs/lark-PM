@@ -1,6 +1,6 @@
 {
     "name": "lark-PM",
-    "version": "0.0.0-alpha",
+    "version": "0.0.0-alpha-2",
     "description": "lark process manager",
     "main": ".easy",
     "directories": {
