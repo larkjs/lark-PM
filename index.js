@@ -2,4 +2,5 @@
 
 import PM from './lib/processManager.js';
 
-export default PM;
+// export default PM;
+module.exports = PM;
