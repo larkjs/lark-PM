@@ -6,6 +6,9 @@ import PM       from '..';
 
 const debug = _debug('lark-PM');
 
+//for mocha test
+process.mainModule.filename = path.join(__filename);
+
 PM.configure({
     'daemon-dirname': process.env.HOME,
     'script': path.join(__dirname, 'app.js'),
@@ -15,5 +18,5 @@ PM.configure({
 });
 
 PM.daemon.list().then(result => {
-    console.log(result);
+    console.log(JSON.stringify(result, null, 4));
 });

@@ -7,6 +7,9 @@ import PM       from '..';
 
 const debug = _debug('lark-PM');
 
+//for mocha test
+process.mainModule.filename = path.join(__filename);
+
 const server = http.createServer((req, res) => {
     console.log(process.pid + ' has recieved a request');
     res.write(process.pid + ' is at your service');
