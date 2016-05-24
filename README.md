@@ -49,7 +49,7 @@ In this case, use the following commands to control your app
 
 * `$ node app.js --lark-stop` stop the app processes, including daemon, master and all workers
 * `$ node app.js --lark-status` show the app status
-* 
+
 # LICENCE
 MIT
 
