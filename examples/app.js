@@ -22,6 +22,7 @@ PM.configure({
     'background': true,
     // 'instances': 2,
     'memory': 1 * 1024 * 1024, // 1GB
+    'control-prefix': '--lark-',
 });
 
 debug('examples/app.js testing PM role');
