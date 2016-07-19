@@ -28,7 +28,7 @@ describe('Lark-PM start ', function () {
         catch (e) {
             error = e;
         }
-        output.should.be.exactly('Starting application ...');
+        output.should.be.exactly('Starting application ...\nStarted!');
         should(error).be.exactly(null);
         setTimeout(() => done(), 1000);
     });
@@ -63,7 +63,6 @@ describe('Lark-PM start ', function () {
 
 });
 
-
 describe('Lark-PM stop ', function () {
     this.timeout(10000);
 
@@ -76,7 +75,7 @@ describe('Lark-PM stop ', function () {
         catch (e) {
             error = e;
         }
-        output.should.be.exactly('Stopping application ...');
+        output.should.be.exactly('Stopping application ...\nStopped!');
         should(error).be.exactly(null);
         done();
     });
