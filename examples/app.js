@@ -25,20 +25,24 @@ PM.configure({
     'control-prefix': '--lark-',
 });
 
-debug('examples/app.js testing PM role');
-if (PM.isWorker) {
-    debug('examples/app.js PM role is WORKER');
-    server.listen(3000);
-    console.log('Server ' + process.pid + ' has started listening at 3000');
-}
-else if (PM.isMaster) {
-    debug('examples/app.js PM role is MASTER');
-}
-else if (PM.isDaemon) {
-    debug('examples/app.js PM role is DAEMON');
-}
-else {
-    debug('examples/app.js PM role is NOT SET');
-}
+PM.run().then(PM => {
+
+    debug('examples/app.js testing PM role');
+    if (PM.isWorker) {
+        debug('examples/app.js PM role is WORKER');
+        server.listen(3000);
+        console.log('Server ' + process.pid + ' has started listening at 3000');
+    }
+    else if (PM.isMaster) {
+        debug('examples/app.js PM role is MASTER');
+    }
+    else if (PM.isDaemon) {
+        debug('examples/app.js PM role is DAEMON');
+    }
+    else {
+        debug('examples/app.js PM role is NOT SET');
+    }
+
+}).catch(error => console.log(error.stack));
 
 debug('examples/app.js loaded!');
