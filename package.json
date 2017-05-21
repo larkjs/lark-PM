@@ -1,53 +1,45 @@
 {
-    "name": "lark-PM",
-    "version": "0.1.1",
-    "description": "lark process manager",
-    "main": ".easy",
-    "directories": {
-        "example": "examples"
-    },
-    "scripts": {
-        "test": "cd .easy && rm -rf node_modules && ln -s ../node_modules node_modules && NODE_ENV=testing ./node_modules/.bin/mocha --harmony --require should test/"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/larkjs/lark-PM.git"
-    },
-    "keywords": [
-        "process manager",
-        "lark"
-    ],
-    "dependencies": {
-        "bytes": "^2.3.0",
-        "chalk": "^1.1.3",
-        "date-format": "0.0.2",
-        "debug": "^2.2.0",
-        "extend": "^3.0.0",
-        "forever": "^0.15.1",
-        "lodash": "^4.12.0",
-        "mkdirp": "^0.5.1",
-        "table": "^3.7.8"
-    },
-    "author": "lark-team",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/larkjs/lark-PM/issues"
-    },
-    "homepage": "https://github.com/larkjs/lark-PM",
-    "devDependencies": {
-        "chalk": "^1.1.1",
-        "easy-babel": "^1.0.3",
-        "got": "^6.3.0",
-        "mocha": "^2.3.3",
-        "should": "^7.1.1"
-    },
-    "engines": {
-        "node": ">=0.11.9"
-    },
-    "easy": {
-        "main": "index.js",
-        "scripts": {
-            "test": "NODE_ENV=testing ./node_modules/.bin/mocha --harmony --require should test/"
-        }
-    }
+  "name": "lark-pm",
+  "version": "1.0.0",
+  "description": "lark process manager",
+  "main": "./lib/Client.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/larkjs/lark-PM.git"
+  },
+  "scripts": {
+    "test": "eslint index.js example/** source/** && ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --require should --recursive test",
+    "debug": "node --inspect-brk=9229 example/app.js"
+  },
+  "keywords": [
+    "process manager",
+    "lark"
+  ],
+  "dependencies": {
+    "debug": "^2.6.6",
+    "del": "^2.2.2",
+    "extend": "^3.0.1",
+    "forever-monitor": "^1.7.1",
+    "got": "^6.7.1",
+    "mkdirp": "^0.5.1",
+    "vi-misc": "^1.3.0"
+  },
+  "author": "Sun Haohao",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/larkjs/lark-PM/issues"
+  },
+  "homepage": "https://github.com/larkjs/lark-PM",
+  "devDependencies": {
+    "commander": "^2.9.0",
+    "mocha": "^2.3.3",
+    "should": "^7.1.1"
+  },
+  "engines": {
+    "node": ">= 7.6"
+  },
+  "directories": {
+    "example": "examples",
+    "test": "test"
+  }
 }

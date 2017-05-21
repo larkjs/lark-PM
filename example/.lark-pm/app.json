@@ -1,0 +1,9 @@
+{
+    "restarts": 2,
+    "instances": 2,
+    "pidfile": "/Users/baidu/haohao/research/lark-pm/example/.lark-pm/app/daemon.pid",
+    "sockfile": "/Users/baidu/haohao/research/lark-pm/example/.lark-pm/app/daemon.sock",
+    "timeout": 10000,
+    "tracelog": "/Users/baidu/haohao/research/lark-pm/example/.lark-pm/app/trace.log",
+    "errorlog": "/Users/baidu/haohao/research/lark-pm/example/.lark-pm/app/error.log"
+}
