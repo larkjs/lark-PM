@@ -8,7 +8,7 @@
     "url": "git+https://github.com/larkjs/lark-PM.git"
   },
   "scripts": {
-    "test": "eslint index.js example/** source/** && ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --require should --recursive test",
+    "test": "./node_modules/.bin/eslint index.js lib/** && ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --require should --recursive test",
     "debug": "node --inspect-brk=9229 example/app.js"
   },
   "keywords": [
@@ -16,12 +16,15 @@
     "lark"
   ],
   "dependencies": {
+    "chalk": "^1.1.3",
     "debug": "^2.6.6",
     "del": "^2.2.2",
+    "duration": "^0.2.0",
     "extend": "^3.0.1",
     "forever-monitor": "^1.7.1",
     "got": "^6.7.1",
     "mkdirp": "^0.5.1",
+    "table": "^4.0.1",
     "vi-misc": "^1.3.0"
   },
   "author": "Sun Haohao",
@@ -32,6 +35,8 @@
   "homepage": "https://github.com/larkjs/lark-PM",
   "devDependencies": {
     "commander": "^2.9.0",
+    "eslint": "^3.19.0",
+    "istanbul": "^1.1.0-alpha.1",
     "mocha": "^2.3.3",
     "should": "^7.1.1"
   },

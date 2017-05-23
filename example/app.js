@@ -1,8 +1,12 @@
 'use strict';
 
-const http  = require('http');
+const http    = require('http');
+const path    = require('path');
 
-http.createServer((req, res) => {
+let server = http.createServer((req, res) => {
     res.write(`worker pid ${process.pid} is working for you`);
+    console.log(`worker pid ${process.pid} received ${req.method} ${req.url}`);
     res.end();
-}).listen(3000, () => console.log(`worker pid ${process.pid} listening on 3000 ...`));
+});
+
+server.listen(3000, () => console.log(`worker pid ${process.pid} listening on 3000 ...`));

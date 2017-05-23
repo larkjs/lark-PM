@@ -1,12 +1,14 @@
 /**
  * Stop the running app
  **/
-const LarkPM = require('..');
+const LarkPM  = require('..');
+const LarkLog = require('lark-log');
 
 const pm = new LarkPM('app.js');
+let logger = new LarkLog();
 
 pm.exit().then(() => {
-    console.log("EXITED");
+    logger.log('EXITED');
 }).catch((error) => {
-    console.log(error.stack);
+    logger.log(error.stack);
 });
